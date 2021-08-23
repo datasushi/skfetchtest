@@ -26,6 +26,14 @@ func test(w http.ResponseWriter, r *http.Request) {
 			w.Write(empty)
 		case "GET":
 			w.Write(empty)
+		case "POST":
+			w.Write(empty)
+		case "HEAD":
+			w.Write(empty)
+		case "DELETE":
+			w.Write(empty)
+		case "PATCH":
+			w.Write(empty)
 	}
 }
 

@@ -5,14 +5,22 @@
 <script>
 	import Counter from '$lib/Counter.svelte';
 
-	doIt()
+	doR("PUT")
+	doR("GET")
+	doR("POST")
 
-	async function doIt() {
+	async function doR(method) {
 		var body = JSON.stringify({ payload: "none" });
-		const response = await fetch('http://localhost:8080/', {
-			method: 'PUT',
-			body: body
-		});
+		if ("GET" == method) {
+			const response = await fetch('http://localhost:8080/', {
+				method: method
+			});
+		} else {
+			const response = await fetch('http://localhost:8080/', {
+				method: method,
+				body: body
+			});
+		}
 	}
 
 
