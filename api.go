@@ -12,7 +12,7 @@ var (
 )
 
 func main() {
-	http.HandleFunc("/", test)
+	http.HandleFunc("/test", test)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 

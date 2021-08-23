@@ -1,29 +1,16 @@
 <script context="module">
-	export const prerender = true;
+	export async function load({ page }) {
+		var body = JSON.stringify({ token: page.query.get('token') });
+		const response = await fetch('http://localhost:8080/test', {
+			method: 'PUT',
+			body: body
+		});
+		return {}
+	}
 </script>
 
 <script>
 	import Counter from '$lib/Counter.svelte';
-
-	doR("PUT")
-	doR("GET")
-	doR("POST")
-
-	async function doR(method) {
-		var body = JSON.stringify({ payload: "none" });
-		if ("GET" == method) {
-			const response = await fetch('http://localhost:8080/', {
-				method: method
-			});
-		} else {
-			const response = await fetch('http://localhost:8080/', {
-				method: method,
-				body: body
-			});
-		}
-	}
-
-
 </script>
 
 <svelte:head>
