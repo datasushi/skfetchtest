@@ -1,5 +1,5 @@
 <script context="module">
-	export async function load({ page }) {
+	export async function load({ fetch, page }) {
 		var body = JSON.stringify({ token: page.query.get('token') });
 		const response = await fetch('http://localhost:8080/test', {
 			method: 'PUT',
