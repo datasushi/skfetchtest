@@ -1,11 +1,13 @@
 # Reproduction of Behaviour
 
 In order to run this start the API with:
+```Bash
 go run api.go
-
+```
 Next run:
+```Bash
 npm run dev
-
+```
 Next visit localhost:3000
 
 As a result the terminal in which go was run should show the following dumps:
