@@ -8,7 +8,10 @@ Next run:
 ```Bash
 npm run dev
 ```
-Next visit localhost:3000
+Next visit 
+```Bash
+localhost:3000/?token=jkaskjhsahkjsdkhjsadhjksad
+```
 
 As a result the terminal in which go was run should show the following dumps:
 ```Bash
