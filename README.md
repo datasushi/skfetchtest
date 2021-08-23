@@ -1,38 +1,57 @@
-# create-svelte
+# Reproduction of Behaviour
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
+In order to run this start the API with:
+go run api.go
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm init svelte@next
-
-# create a new project in my-app
-npm init svelte@next my-app
-```
-
-> Note: the `@next` is temporary
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
+Next run:
 npm run dev
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+Next visit localhost:3000
+
+As a result the terminal in which go was run should show the following dumps:
+```Bash
+PUT / HTTP/1.1
+Host: localhost:8080
+Connection: close
+Accept: */*
+Accept-Encoding: gzip,deflate,br
+Connection: close
+Content-Length: 18
+Content-Type: text/plain;charset=UTF-8
+User-Agent: node-fetch
+
+{"payload":"none"}
+OPTIONS / HTTP/1.1
+Host: localhost:8080
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en
+Access-Control-Request-Method: PUT
+Connection: keep-alive
+Origin: http://localhost:3000
+Referer: http://localhost:3000/
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-site
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36
+
+
+PUT / HTTP/1.1
+Host: localhost:8080
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en
+Connection: keep-alive
+Content-Length: 18
+Content-Type: text/plain;charset=UTF-8
+Origin: http://localhost:3000
+Referer: http://localhost:3000/
+Sec-Ch-Ua: "Chromium";v="92", " Not A;Brand";v="99", "Google Chrome";v="92"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-site
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36
+
+{"payload":"none"}
 ```
-
-## Building
-
-Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
-
-```bash
-npm run build
-```
-
-> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
